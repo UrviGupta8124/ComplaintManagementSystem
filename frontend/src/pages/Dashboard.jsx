@@ -12,9 +12,9 @@ const Dashboard = () => {
   const fetchComplaints = async () => {
     try {
       const config = { headers: { Authorization: `Bearer ${user.token}` } };
-      let url = 'http://127.0.0.1:5005/api/complaints';
+      let url = 'https://complaint-backend-qste.onrender.com/api/complaints';
       if (searchTerm) {
-        url = `http://127.0.0.1:5005/api/complaints/search?location=${searchTerm}`;
+        url = `https://complaint-backend-qste.onrender.com/api/complaints/search?location=${searchTerm}`;
       }
       const { data } = await axios.get(url, config);
       setComplaints(data);
@@ -32,7 +32,7 @@ const Dashboard = () => {
   const handleStatusUpdate = async (id, newStatus) => {
     try {
       const config = { headers: { Authorization: `Bearer ${user.token}` } };
-      await axios.put(`http://127.0.0.1:5005/api/complaints/${id}`, { status: newStatus }, config);
+      await axios.put(`https://complaint-backend-qste.onrender.com/api/complaints/${id}`, { status: newStatus }, config);
       fetchComplaints(); // Refresh list
     } catch (error) {
       console.error('Error updating status', error);

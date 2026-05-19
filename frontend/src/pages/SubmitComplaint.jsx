@@ -33,7 +33,7 @@ const SubmitComplaint = () => {
     setError('');
     try {
       const config = { headers: { Authorization: `Bearer ${user.token}` } };
-      const { data } = await axios.post('http://127.0.0.1:5005/api/ai/analyze', { text: formData.description }, config);
+      const { data } = await axios.post('https://complaint-backend-qste.onrender.com/api/ai/analyze', { text: formData.description }, config);
       setAiAnalysis(data);
     } catch (err) {
       setError("Failed to analyze complaint with AI.");
@@ -49,7 +49,7 @@ const SubmitComplaint = () => {
     try {
       const config = { headers: { Authorization: `Bearer ${user.token}` } };
       const payload = { ...formData, aiAnalysis };
-      await axios.post('http://127.0.0.1:5005/api/complaints', payload, config);
+      await axios.post('https://complaint-backend-qste.onrender.com/api/complaints', payload, config);
       
       // Automatic response alert
       const responseMsg = aiAnalysis?.autoResponse || "Your complaint has been forwarded to the concerned department.";
