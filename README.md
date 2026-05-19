@@ -14,10 +14,10 @@ A full-stack MERN application that allows users to register complaints online. T
 - **Modern UI/UX:** Built with React and Vite using a responsive, glassmorphism-inspired design system.
 
 ## Tech Stack
-- **Frontend:** React, Vite, Vanilla CSS
+- **Frontend:** React.js
 - **Backend:** Node.js, Express.js
 - **Database:** MongoDB Atlas
-- **AI Integration:** OpenRouter API (Baidu/Cobuddy model)
+- **AI Integration:** OpenRouter API
 - **Authentication:** JSON Web Tokens (JWT) & bcrypt
 
 ## Environment Variables
